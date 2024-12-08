@@ -1,0 +1,28 @@
+{% extends 'main/layout.html' %}
+
+{% block title %}Продати{% endblock %}
+
+{% block content %}
+    <div class="addhome">
+        <h3>Продати нерухомість</h3>
+        <div class="addhome">
+            <div class="container">
+                <!-- Форма для квартири -->
+                <form method="post" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    <h1>Продати квартиру</h1>
+                    {{ form.as_p }}
+                    <button type="submit" name="apartment" class="btn btn-primary">Додати квартиру</button>
+                </form>
+
+                <!-- Форма для будинку -->
+                <form method="post" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    <h1>Продати будинок</h1>
+                    {{ form_house.as_p }}
+                    <button type="submit" name="house" class="btn btn-primary">Додати будинок</button>
+                </form>
+            </div>
+        </div>
+    </div>
+{% endblock %}

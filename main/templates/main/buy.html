@@ -1,0 +1,62 @@
+{% extends 'main/layout.html' %}
+
+{% block title %}Купити{% endblock %}
+
+{% block content %}
+    <div class="features">
+        <h1>Список квартир</h1>
+
+        <!-- Форма для фільтрації -->
+        <form method="get">
+            <div class="filter-container">
+                <!-- Фільтр за площею -->
+                <div>
+                    <label for="area">Площа:</label>
+                    {{ form.area }}
+                </div>
+
+                <!-- Фільтр за ціною -->
+                <div>
+                    <label for="price">Ціна:</label>
+                    {{ form.price }}
+                </div>
+
+                <!-- Фільтр за кількістю кімнат -->
+                <div>
+                    <label for="rooms">Кількість кімнат:</label>
+                    {{ form.rooms }}
+                </div>
+
+                <!-- Фільтр за поверхами -->
+                <div>
+                    <label for="floor">Поверхи:</label>
+                    {{ form.floor }}
+                </div>
+
+                <!-- Кнопки фільтрації -->
+                <button type="submit" class="filter-btn">Застосувати фільтри</button>
+                <a href="{% url 'buy' %}"><button type="button" class="reset-btn">Скинути фільтри</button></a>
+            </div>
+        </form>
+
+        <ul class="apartment-grid">
+            {% for apartment in buy %}
+                <li class="apartment-item">
+                    <!-- Заміна кнопки на посилання -->
+                    <a href="{% url 'apartment_detail' apartment.id %}" class="apartment-btn">
+                        <h2>{{ apartment.title }}</h2>
+                        <p>Ціна: {{ apartment.price }} $</p>
+                        <p>Площа: {{ apartment.area }} м²</p>
+                        <p>Кількість кімнат: {{ apartment.rooms }}</p>
+                        <p>Поверх: {{ apartment.floor }}</p>
+                        {% if apartment.image %}
+                            <img src="{{ apartment.image.url }}" alt="{{ apartment.title }}" class="apartment-image">
+                        {% else %}
+                            <p>Зображення відсутнє</p>
+                        {% endif %}
+                    </a>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+{% endblock %}

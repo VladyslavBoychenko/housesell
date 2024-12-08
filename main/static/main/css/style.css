@@ -1,0 +1,1046 @@
+aside {
+    float: left;
+    background: #f1f1f1;
+    width: 15%;
+    padding: 2.5%;
+    height: 100vh;
+    color: #fff;
+    border-right: 5px solid #4d4d4d;
+    position: relative;
+}
+
+aside .logo-link {
+    display: block;
+    font-size: 20px;
+    color: #666;
+    text-decoration: none;
+    transition: color 0.6s ease, transform 0.6s ease;
+    margin-bottom: 10px;
+    padding-left: 10px;
+}
+
+aside .logo-link:hover {
+    color: #e35f5f;
+    transform: scale(1.1);
+}
+
+aside .nav-links {
+    position: absolute;
+    bottom: 10px;
+    margin-left: 40px;
+    left: 0;
+    width: 100%;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 150px;
+}
+
+aside .nav-links a {
+    display: block;
+    font-size: 20px;
+    color: #666;
+    text-decoration: none;
+    transition: color 0.6s ease, transform 0.6s ease;
+    padding-left: 45px;
+}
+
+aside .nav-links a:hover {
+    color: #e35f5f;
+    transform: scale(1.1);
+}
+
+aside .nav-qwelinks {
+    position: absolute;
+    bottom: 10px;
+    margin-left: 46px;
+    left: 0;
+    width: 100%;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+aside .nav-qwelinks a {
+    display: block;
+    font-size: 20px;
+    color: #666;
+    text-decoration: none;
+    transition: color 0.6s ease, transform 0.6s ease;
+    padding-left: 45px;
+}
+
+aside .nav-qwelinks a:hover {
+    color: #e35f5f;
+    transform: scale(1.1);
+}
+
+aside .q-links {
+    position: absolute;
+    margin-left: 20px;
+    top: 370px;
+    left: 0;
+    width: 100%;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+aside .q-links a {
+    display: block;
+    font-size: 20px;
+    color: #666;
+    text-decoration: none;
+    transition: color 0.6s ease, transform 0.6s ease;
+    padding-left: 45px;
+}
+
+aside .q-links a:hover {
+    color: #e35f5f;
+    transform: scale(1.1);
+}
+
+aside ul {
+    list-style: none;
+}
+
+main .features {
+    float: left;
+    margin-left: 30px;
+    text-align: left;
+    width: 75%;
+}
+
+/* Загальні стилі для списку */
+.listing-grid {
+    display: flex;
+    flex-direction: column; /* Оголошуємо вертикальний порядок елементів */
+    width: 100%; /* Забезпечуємо повну ширину для списку */
+    padding: 0;
+    margin: 0;
+}
+
+/* Загальні стилі для елементів списку */
+.listing-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 30px; /* Збільшено відступ між елементами */
+    width: 100%; /* Забезпечуємо повну ширину для кожного елемента */
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.listing-item:hover {
+    transform: scale(1.03);
+}
+
+/* Стилі для лівого розташування елемента */
+.listing-item.left {
+    flex-direction: row; /* Фотографія зліва, текст справа */
+}
+
+.listing-item.left .listing-image-container {
+    margin-right: 30px; /* Збільшено відступ між зображенням та текстом */
+}
+
+/* Стилі для правого розташування елемента */
+.listing-item.right {
+    flex-direction: row-reverse; /* Фотографія справа, текст зліва */
+}
+
+.listing-item.right .listing-image-container {
+    margin-left: 30px; /* Збільшено відступ між зображенням та текстом */
+}
+
+/* Стилі для посилань */
+.listing-link {
+    display: flex;
+    text-decoration: none;
+    color: inherit;
+    width: 100%; /* Забезпечуємо, щоб посилання займало всю ширину */
+}
+
+/* Стилі для зображень */
+.listing-image-container {
+    flex: 0 0 auto;
+    max-width: 170px; /* Фіксована ширина зображення */
+    max-height: 10px;
+}
+
+.listing-image {
+    max-width: 100%; /* Забезпечуємо адаптивність зображення */
+    height: auto;
+}
+
+/* Стилі для текстової частини */
+.listing-info {
+    flex: 1;
+}
+
+.listing-info h2 {
+    margin: 6px 0 6px; /* Збільшено відступи для заголовка */
+    font-size: 18px; /* Можна змінити розмір шрифта заголовка */
+}
+
+.listing-info p {
+    margin: 5px 0; /* Збільшено відступи для абзаців */
+    font-size: 16px; /* Можна змінити розмір шрифта тексту */
+    color: #333;
+}
+
+
+
+.zxc {
+    margin-left: 35px;
+    margin-top: 28px;
+    text-align: center;
+}
+
+.zxc h1 {
+    font-size: 15px;
+    color: #333;
+    margin-bottom: 14px;
+}
+
+.apartment-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    justify-items: center;
+}
+
+.apartment-item {
+    margin-top: 18px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    padding: 8px;
+    text-align: center;
+    transition: transform 0.3s ease;
+    width: 100%;
+    height: 85%;
+    display: flex;
+    justify-content: center;
+}
+
+.apartment-item:hover {
+    transform: scale(1.05);
+}
+
+.apartment-btn {
+    width: 100%;
+    padding: 4px 8px;
+    background-color: white;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 8px;
+    margin-top: 6px;
+    border-radius: 3px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.apartment-btn:hover {
+    background-color: white;
+}
+
+.apartment-btn h2 {
+    font-size: 11px;
+    color: #444;
+    margin-bottom: 6px;
+}
+
+.apartment-btn p {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 6px;
+}
+
+.apartment-image {
+    max-width: 90%;
+    max-height: 65px;
+    margin-bottom: 6px;
+    transition: transform 0.5s ease;
+}
+
+.apartment-image:hover {
+    transform: scale(1.75);
+}
+
+.filter-container {
+
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 20px;
+}
+
+.filter-container div {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.filter-container label {
+    font-size: 16px;
+    margin-bottom: 5px;
+}
+
+.filter-container select {
+    padding: 8px;
+    font-size: 16px;
+    width: 180px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.filter-btn, .reset-btn {
+    margin-top: 30px;
+    background-color: white;
+    color: #666;
+    border: none;
+    padding: 8px 16px;
+    font-size: 14px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    margin-bottom: 10px;
+    text-decoration: none; /* Забороняє підкреслення */
+}
+
+.filter-btn:focus, .reset-btn:focus {
+    outline: none; /* Видаляє стандартне обведення */
+    text-decoration: none; /* Забороняє підкреслення при фокусі */
+}
+
+.filter-btn:hover, .reset-btn:hover {
+    background-color: white;
+    color: green;
+    transform: scale(1.1);
+}
+
+.reset-btn:hover {
+    background-color: white;
+    color: red;
+    transform: scale(1.1);
+}
+
+
+
+.flat11 {
+    width: 85%;
+    max-height: 2000px;
+    padding: 20px;
+    background-color: #ffffff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Зміна на flex-start для вирівнювання зліва */
+}
+
+.text-flat11 {
+    font-size: 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; /* Зроблено вирівнювання зліва */
+    padding: 0 20px;
+    width: 100%;
+}
+
+.text-flat11 h2 {
+    margin-top: 20px;
+    font-size: 28px;
+    margin-bottom: 10px;
+    color: #333;
+    text-align: left; /* Вирівнювання заголовка зліва */
+}
+
+.text-flat11 p {
+    font-size: 16px;
+    margin-top: 10px;
+    color: #555;
+    line-height: 1.3;
+    margin-bottom: 5px;
+    text-align: left; /* Вирівнювання тексту зліва */
+}
+
+.text-flat11 .kingsad {
+    margin-top: 62px;
+    font-size: 16px;
+    color: #555;
+    line-height: 1.3;
+    margin-bottom: 5px;
+    text-align: left; /* Вирівнювання тексту зліва */
+}
+
+/* Стилі для блоку з автором */
+.author {
+    display: flex;
+    flex-direction: column; /* Вертикальне розташування */
+    margin-top: 20px;
+    padding-top: 10px;
+    border-top: 1px solid #ddd;
+    width: 100%; /* Ширина на всю доступну область */
+}
+
+.author-info {
+    display: flex;
+    flex-direction: column; /* Вертикальне розташування */
+    margin-top: 10px;
+    font-size: 14px;
+    color: #333;
+    text-align: left; /* Вирівнювання зліва */
+}
+
+.author-photo {
+    margin-bottom: 10px;
+    text-align: left; /* Вирівнювання фото зліва */
+}
+
+.author-photo img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #ddd;
+}
+
+.author-info p {
+    margin: 2px 0;
+}
+
+.btn-link {
+    text-decoration: none; /* Прибрати стандартне підкреслення */
+    font-weight: bold; /* Жирний шрифт для імені */
+}
+
+.btn-link:hover {
+    text-decoration: underline; /* Підкреслення при наведенні */
+
+}
+
+.grid-container {
+    margin-top: 60px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 10px;
+    max-width: 1500px;
+}
+
+.grid-item {
+    text-align: left; /* Вирівнювання зліва */
+    padding: 10px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.grid-item img {
+    width: 100%;
+    height: 300px; /* Збільшено висоту картинки */
+    object-fit: cover;
+    transition: transform 0.3s ease;
+    border-radius: 5px;
+}
+
+.grid-item img:hover {
+    transform: scale(1.5); /* Зменшено масштаб для більшого ефекту */
+}
+
+
+
+
+
+
+.filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.filter {
+    padding: 10px 15px;
+    border: 1px solid #ccc;
+    border-radius: 15px;
+    background-color: #fff;
+    font-size: 14px;
+    font-weight: bold;
+    color: #333;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.filter:hover {
+    background-color: #e0e0e0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.price {
+    font-size: 20px;
+    font-weight: bold;
+    color: #d9534f;
+    align-self: flex-start;
+    margin-left: 15px;
+    margin-bottom: 20px;
+}
+
+.addhome {
+  width: 93%; /* Зменшено ширину */
+  margin-left: 130px; /* Зменшено лівий відступ */
+  padding: 15px; /* Зменшено внутрішні відступи */
+  background-color: #f9f9f9;
+  border-radius: 10px; /* Зменшено радіус */
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1); /* Зменшено тінь */
+}
+
+/* Заголовок форми */
+.addhome h3 {
+  margin-left: 100px;
+  text-align: center;
+  font-size: 28px; /* Зменшено розмір шрифту */
+  color: #333;
+}
+
+.addhome h1 {
+  margin-left: 20px;
+  text-align: center;
+  font-size: 28px; /* Зменшено розмір шрифту */
+  color: #333;
+}
+
+/* Загальні стилі для форми */
+form {
+  width: 75%; /* Зменшено ширину форми */
+  margin: 8px; /* Зменшено відступи між формами */
+  display: inline-block;
+  vertical-align: top;
+}
+
+form label {
+  font-size: 14px; /* Зменшено розмір шрифту */
+  color: #333;
+  display: block;
+}
+
+form input[type="number"],
+form input[type="text"],
+form textarea,
+form select {
+  width: 100%;
+  padding: 6px; /* Зменшено відступи всередині полів */
+  margin-bottom: 1px; /* Зменшено відступ між полями */
+  font-size: 12px; /* Зменшено розмір шрифту */
+}
+
+form textarea {
+  height: 150px; /* Зменшено висоту текстової області */
+}
+
+form select {
+  font-size: 12px; /* Зменшено розмір шрифту */
+}
+
+/* Секції для специфічних полів */
+#apartment_fields, #house_fields {
+  background-color: #f2f2f2;
+  padding: 6px; /* Зменшено відступи всередині секцій */
+  border-radius: 4px;
+  border: 1px solid #ddd;
+}
+
+#apartment_fields label,
+#house_fields label {
+  font-size: 13px; /* Зменшено розмір шрифту */
+  color: #555;
+}
+
+/* Кнопки відправки */
+form button {
+  width: 100%;
+  padding: 10px; /* Зменшено висоту кнопки */
+  background-color: #28a745;
+  color: white;
+  font-size: 14px; /* Зменшено розмір шрифту */
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+form button:hover {
+  background-color: #218838;
+}
+
+
+/* Стилі для контейнера */
+.container {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.container form {
+  width: 48%;
+}
+
+/* Медіа запит для малих екранів */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+  }
+
+  .container form {
+    width: 100%;
+  }
+}
+
+.aboutus {
+    text-align: center;
+    padding: 50px 20px;
+}
+
+.tiles-container {
+    margin-left: 70px;
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    margin-top: 200px;
+}
+
+.tile {
+    background-color: #f4f4f4;
+    padding: 30px;
+    width: 30%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+}
+
+.tile:hover {
+    transform: translateY(-10px);
+}
+
+.tile h3 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.tile p {
+    font-size: 1rem;
+    color: #555;
+    line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+    .tiles-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .tile {
+        width: 80%;
+        margin-bottom: 20px;
+    }
+}
+
+/* Основний контейнер */
+.loginq {
+    width: 92%;
+    max-width: 400px; /* Обмеження ширини */
+    margin: 0 auto; /* Центрування по горизонталі */
+    padding: 20px;
+    background-color: #f8f9fa;
+    border: 1px solid #dee2e6;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    position: absolute; /* Абсолютне позиціонування */
+    top: 50%; /* Центрування по вертикалі */
+    left: 55%; /* Центрування по горизонталі */
+    transform: translate(-50%, -50%); /* Зсув для точного центрування */
+}
+
+/* Центрування полів форми */
+form input, form button {
+    display: block; /* Робимо блоковими для автоматичного заповнення ширини */
+    margin: 0 auto 45px; /* Центрування і відступи між елементами */
+    width: 100%; /* Поля займають всю ширину контейнера */
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+form input:focus {
+    border-color: #007bff;
+    outline: none;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+/* Кнопка "Увійти" */
+.btn-register {
+    background-color: #28a745;
+    border: none;
+    padding: 12px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #fff;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+.btn-register:hover {
+    background-color: #218838;
+}
+
+/* Заголовок */
+.loginq h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #343a40;
+    font-family: 'Arial', sans-serif;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+/* Текст під формою */
+.loginq p {
+
+    text-align: center;
+    font-size: 14px;
+    color: #6c757d;
+}
+
+/* Лінк "Реєстрація" */
+.loginq a {
+    color: #007bff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.loginq a:hover {
+    text-decoration: underline;
+}
+
+/* Основний контейнер профілю */
+.prf {
+    position: absolute; /* Змінюємо на relative для кращого контролю */
+    width: 85%;
+    left: 15%;
+    padding: 10px 20px; /* Зменшено верхній відступ */
+    background: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    top: -30px; /* Піднімаємо блок вище */
+}
+
+/* Заголовки */
+.prf h2, .prf h3, .prf h4 {
+    text-align: center;
+    margin-bottom: 25px; /* Зменшено відступ між заголовками */
+    color: #333;
+}
+
+.prf h2 { font-size: 28px; }
+.prf h3 { font-size: 22px; }
+.prf h4 { font-size: 20px; }
+
+/* Фото профілю */
+.prf .col-md-4 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: -10px; /* Зменшено відступ зверху */
+}
+
+.prf .col-md-4 img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    border: 3px solid #ddd;
+    object-fit: cover;
+}
+
+.prf .col-md-4 p {
+    text-align: center;
+    font-size: 16px;
+    color: #888;
+}
+
+/* Особиста інформація */
+.prf .col-md-8 {
+    font-size: 16px;
+    color: #555;
+    margin-top: -15px; /* Зменшено відступ між фото і текстом */
+}
+
+.prf .col-md-8 p {
+    margin-bottom: 10px;
+}
+
+.prf .col-md-8 strong {
+    color: #333;
+}
+
+/* Зона редагування профілю */
+.edit-profile-title {
+    text-align: center;
+    font-size: 22px;
+    margin-top: 50px; /* Зменшено верхній відступ */
+}
+
+.edit-profile-form {
+    background: #fff;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+    max-width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: -20px; /* Піднято форму вище */
+}
+
+/* Стиль форми */
+.edit-profile-form input,
+.edit-profile-form textarea,
+.edit-profile-form button {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+}
+
+.edit-profile-form button {
+    background: #28a745;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.edit-profile-form button:hover {
+    background: #218838;
+}
+
+
+/* Контейнер для оголошень */
+.ads-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;  /* Вирівнюємо ліворуч */
+  justify-content: flex-start;
+  margin-top: 30px;
+}
+
+.ads-section {
+  display: flex;
+  justify-content: center;
+  gap: 20px; /* Проміжок між секціями */
+}
+
+.apartments, .houses {
+  width: 45%; /* Задаємо ширину 45% для кожної секції */
+  margin-top: 20px;
+}
+
+/* Стиль для списків оголошень */
+.property-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Два стовпці */
+    gap: 15px; /* Відступи між плитками */
+    justify-items: center;
+}
+
+.property-item {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    padding: 8px;
+    text-align: center;
+    transition: transform 0.3s ease;
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.property-item a {
+    display: block;
+    text-decoration: none; /* Відключаємо підкреслення */
+    color: inherit; /* Наслідуємо колір від батьківських елементів */
+}
+
+.property-item:hover {
+    transform: scale(1.05);
+}
+
+
+.property-image {
+    max-width: 100%;
+    max-height: 100px;
+    margin-bottom: 6px;
+    transition: transform 0.5s ease;
+}
+
+.property-image:hover {
+    transform: scale(1.25);
+}
+
+
+/* Секція редагування та оголошень поруч */
+.profile-edit-ads-container {
+  display: flex;
+  margin-bottom: 20px;
+  gap: 20px; /* Додаємо відступ зліва */
+}
+
+/* Задаємо ширину 48% для кожної секції */
+.edit-profile-section, .ads-section {
+  width: 48%;  /* Розмір кожної секції 48% */
+}
+
+/* Для секції оголошень */
+.ads-section {
+  margin-left: 0; /* Прибираємо зайвий відступ справа */
+}
+
+.edit-profile-title, .ads-title-container h3 {
+  font-size: 22px;
+  margin: 0;
+  color: #333;
+}
+
+/* Основний контейнер */
+.edit-ads {
+    position: absolute;
+    width: 85%;
+    left: 15%;
+    height: 95%;
+    padding: 15px;
+    background: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.edit-ads h2 {
+    text-align: center;
+    font-size: 22px;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+/* Сітка оголошень */
+.ads-grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 15px;
+}
+
+/* Плитка */
+.ad-tile {
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* Інформація про оголошення */
+.ad-info {
+    text-align: center;
+}
+
+.ad-info h4 {
+    font-size: 18px;
+    color: #333;
+}
+
+.ad-info p {
+    font-size: 14px;
+    color: #555;
+}
+
+.ad-image {
+    max-width: 100%;
+    max-height: 120px;
+    border-radius: 6px;
+    margin: 10px 0;
+}
+
+/* Контейнер для форми */
+.ad-edit {
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    margin: 0 auto;
+    width: 100%;
+    max-width: 500px; /* максимальна ширина для форми */
+}
+
+/* Поля форми */
+.ad-edit .form-control {
+    margin-bottom: 10px;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+    width: 100%; /* щоб поля займали всю ширину контейнера */
+}
+
+/* Кнопка оновлення */
+.ad-edit .btn-update {
+
+
+    background: #28a745;
+    color: #fff;
+
+    font-size: 14px;
+    cursor: pointer;
+    width: 100%; /* щоб кнопка займала всю ширину контейнера */
+}
+
+.ad-edit .btn-update:hover {
+    background: #218838;
+}
+
+/* Кнопка видалення */
+.ad-edit .btn-danger {
+
+    background: orangered;
+    color: #fff;
+
+    font-size: 14px;
+    cursor: pointer;
+    width: 100%; /* щоб кнопка займала всю ширину контейнера */
+}
+
+.ad-edit .btn-danger:hover {
+    background: red;
+}
+
+
+
+
+
+
+
+
+
+
+

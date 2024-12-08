@@ -1,0 +1,70 @@
+{% extends 'main/layout.html' %}
+
+{% block title %}Купити{% endblock %}
+
+{% block content %}
+    <div class="features">
+        <h1>Список квартир</h1>
+
+        <!-- Форма для фільтрації -->
+        <form method="get">
+            <div class="filter-container">
+                <!-- Фільтр за площею -->
+                <div>
+                    <label for="area">Площа:</label>
+                    {{ form.area }}
+                </div>
+
+                <!-- Фільтр за ціною -->
+                <div>
+                    <label for="price">Ціна:</label>
+                    {{ form.price }}
+                </div>
+
+                <!-- Фільтр за кількістю кімнат -->
+                <div>
+                    <label for="rooms">Кількість кімнат:</label>
+                    {{ form.rooms }}
+                </div>
+
+                <!-- Фільтр за поверхами -->
+                <div>
+                    <label for="garage">Гараж:</label>
+                    {{ form.garage }}
+                </div>
+
+                <!-- Кнопки фільтрації -->
+                <button type="submit" class="filter-btn">Застосувати фільтри</button>
+                <a href="{% url 'buy' %}"><button type="button" class="reset-btn">Скинути фільтри</button></a>
+            </div>
+        </form>
+
+        <ul class="apartment-grid">
+            {% for house in buy %}
+                <li class="apartment-item">
+                    <!-- Заміна кнопки на посилання -->
+                    <a href="{% url 'house_detail' house.id %}" class="apartment-btn">
+                        <h2>{{ house.title }}</h2>
+                        <p>Ціна: {{ house.price }} $</p>
+                        <p>Площа: {{ house.area }} м²</p>
+                        <p>Кількість кімнат: {{ house.rooms }}</p>
+                        <p>
+                            <strong>Гараж:</strong>
+                            {% if house.garage %}
+                                Є
+                            {% else %}
+                                Немає
+                            {% endif %}
+                        </p>
+                        {% if house.image %}
+                            <img src="{{ house.image.url }}" alt="{{ house.title }}" class="apartment-image">
+                        {% else %}
+                            <p>Зображення відсутнє</p>
+                        {% endif %}
+                    </a>
+                </li>
+            {% endfor %}
+
+        </ul>
+    </div>
+{% endblock %}

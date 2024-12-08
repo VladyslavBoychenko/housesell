@@ -1,0 +1,113 @@
+{% extends 'main/layout.html' %}
+
+{% load static %}
+
+{% block title %}{{ title }}{% endblock %}
+
+{% block content %}
+    <div class="features">
+        <h2>{{ title }}</h2>
+        <ul class="listing-grid">
+            <!-- Виведення 1-ї квартири (лівий блок) -->
+            <li class="listing-item left">
+                <a href="{% url 'apartment_detail'  apartment.id %}" class="listing-link">
+                    <div class="listing-image-container">
+                        {% if apartment.image %}
+                            <img src="{{ apartment.image.url }}" alt="{{ apartment.title }}" class="listing-image">
+                        {% else %}
+                            <p>Зображення відсутнє</p>
+                        {% endif %}
+                    </div>
+                    <div class="listing-info">
+                        <h2> {{ apartment.title }}</h2>
+                        <p> Ціна: {{ apartment.price }} $</p>
+                        <p> Площа: {{ apartment.area }} м²</p>
+                        <p> Кількість кімнат: {{ apartment.rooms }}</p>
+                        <p> Поверх: {{ apartment.floor }}</p>
+                    </div>
+                </a>
+            </li>
+
+            <!-- Виведення 1-го будинку (правий блок) -->
+            <li class="listing-item right">
+                <a href="{% url 'house_detail' house.id %}" class="listing-link">
+                    <div class="listing-image-container">
+                        {% if house.image %}
+                            <img src="{{ house.image.url }}" alt="{{ house.title }}" class="listing-image">
+                        {% else %}
+                            <p>Зображення відсутнє</p>
+                        {% endif %}
+                    </div>
+                    <div class="listing-info">
+                        <h2>{{ house.title }}</h2>
+                        <p> Ціна: {{ house.price }} $</p>
+                        <p> Площа: {{ house.area }} м²</p>
+                        <p> Кількість кімнат: {{ house.rooms }}</p>
+                        <p> Гараж: {{ house.garage }} місць</p>
+                    </div>
+                </a>
+            </li>
+
+            <!-- Виведення 2-ї квартири (лівий блок) -->
+            <li class="listing-item left">
+                <a href="{% url 'apartment_detail' apartment_2.id %}" class="listing-link">
+                    <div class="listing-image-container">
+                        {% if apartment.image %}
+                            <img src="{{ apartment_2.image.url }}" alt="{{ apartment_2.title }}" class="listing-image">
+                        {% else %}
+                            <p>Зображення відсутнє</p>
+                        {% endif %}
+                    </div>
+                    <div class="listing-info">
+                        <h2>{{ apartment_2.title }}</h2>
+                        <p>Ціна: {{ apartment_2.price }} $</p>
+                        <p>Площа: {{ apartment_2.area }} м²</p>
+                        <p>Кількість кімнат: {{ apartment_2.rooms }}</p>
+                        <p>Поверх: {{ apartment_2.floor }}</p>
+                    </div>
+                </a>
+            </li>
+
+            <!-- Виведення 2-го будинку (правий блок) -->
+            <li class="listing-item right">
+                <a href="{% url 'house_detail' house_2.id  %}" class="listing-link">
+                    <div class="listing-image-container">
+                        {% if house_2.image %}
+                            <img src="{{ house_2.image.url }}" alt="{{ house_2.title }}" class="listing-image">
+                        {% else %}
+                            <p>Зображення відсутнє</p>
+                        {% endif %}
+                    </div>
+                    <div class="listing-info">
+                        <h2>{{ house_2.title }}</h2>
+                        <p>Ціна: {{ house_2.price }} $</p>
+                        <p>Площа: {{ house_2.area }} м²</p>
+                        <p>Кількість кімнат: {{ house_2.rooms }}</p>
+                        <p>Гараж: {{ house_2.garage }} місць</p>
+                    </div>
+                </a>
+            </li>
+
+            <!-- Виведення 3-ї квартири (лівий блок) -->
+            <li class="listing-item left">
+                <a href="{% url 'apartment_detail' apartment_3.id %}" class="listing-link">
+                    <div class="listing-image-container">
+                        {% if apartment_3.image %}
+                            <img src="{{ apartment_3.image.url }}" alt="{{ apartment_3.title }}" class="listing-image">
+                        {% else %}
+                            <p>Зображення відсутнє</p>
+                        {% endif %}
+                    </div>
+                    <div class="listing-info">
+                        <h2>{{ apartment_3.title }}</h2>
+                        <p>Ціна: {{ apartment_3.price }} $</p>
+                        <p>Площа: {{ apartment_3.area }} м²</p>
+                        <p>Кількість кімнат: {{ apartment_3.rooms }}</p>
+                        <p>Поверх: {{ apartment_3.floor }}</p>
+                    </div>
+                </a>
+            </li>
+
+        </ul>
+    </div>
+{% endblock %}

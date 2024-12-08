@@ -1,0 +1,17 @@
+{% extends 'main/layout.html' %}
+
+{% block title %}Вхід{% endblock %}
+
+{% block content %}
+<div class="loginq">
+    <h2>Вхід</h2>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="btn-register">Увійти</button>
+    </form>
+    <p>Немає акаунту? <a href="{% url 'register' %}">Реєстрація</a></p>
+</div>
+
+
+{% endblock %}

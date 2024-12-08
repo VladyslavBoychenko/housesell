@@ -1,0 +1,77 @@
+{% extends 'main/layout.html' %}
+
+{% block title %}Профіль{% endblock %}
+
+{% block content %}
+<div class="prf mt-5">
+    <h2>Ваш профіль</h2>
+    <div class="row">
+        <div class="col-md-4">
+            {% if user.profile_picture %}
+            <img src="{{ user.profile_picture.url }}" alt="Фото профілю" class="img-thumbnail">
+            {% else %}
+            <p>Фото профілю не завантажено</p>
+            {% endif %}
+        </div>
+        <div class="col-md-8">
+            <p><strong>Ім'я:</strong> {{ user.first_name }} {{ user.last_name }}</p>
+            <p><strong>Електронна пошта:</strong> {{ user.email }}</p>
+            <p><strong>Номер телефону:</strong> {{ user.phone_number }}</p>
+        </div>
+    </div>
+
+    <div class="profile-edit-ads-container">
+        <div class="edit-profile-section">
+            <h3 class="edit-profile-title">Редагувати профіль</h3>
+            <div class="edit-profile-form">
+                <form method="post" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    {{ form.as_p }}
+                    <button type="submit" class="btn btn-primary">Оновити</button>
+                </form>
+            </div>
+        </div>
+
+        <div class="user-ads-section">
+            <h3 class="profile-edit-title">Ваші оголошення</h3>
+            <div class="ads-display-container">
+                <div class="property-grid">
+                    {% for ad in apartments %}
+                    <div class="property-item">
+                        <!-- Кнопка для перегляду оголошення -->
+                        <a href="{% url 'apartment_detail' ad.id %}" class="btn btn-success">Переглянути оголошення</a>
+                        <h5>{{ ad.title }}</h5>
+                        <p>Ціна: {{ ad.price }} $</p>
+                        <p>Площа: {{ ad.area }} м²</p>
+                        <p>Кількість кімнат: {{ ad.rooms }}</p>
+                        <p>Поверх: {{ ad.floor }}</p>
+                        {% if ad.image %}
+                        <img src="{{ ad.image.url }}" alt="{{ ad.title }}" class="property-image">
+                        {% else %}
+                        <p>Зображення відсутнє</p>
+                        {% endif %}
+                    </div>
+                    {% endfor %}
+
+                    {% for ad in houses %}
+                    <div class="property-item">
+                        <!-- Кнопка для перегляду оголошення -->
+                        <a href="{% url 'house_detail' ad.id %}" class="btn btn-success">Переглянути оголошення</a>
+                        <h5>{{ ad.title }}</h5>
+                        <p>Ціна: {{ ad.price }} $</p>
+                        <p>Площа: {{ ad.area }} м²</p>
+                        <p>Кількість кімнат: {{ ad.rooms }}</p>
+                        <p>Гараж: {{ ad.garage }}</p>
+                        {% if ad.image %}
+                        <img src="{{ ad.image.url }}" alt="{{ ad.title }}" class="property-image">
+                        {% else %}
+                        <p>Зображення відсутнє</p>
+                        {% endif %}
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

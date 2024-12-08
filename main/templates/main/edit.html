@@ -1,0 +1,96 @@
+{% extends 'main/layout.html' %}
+
+{% block title %}Редагувати оголошення{% endblock %}
+
+{% block content %}
+<div class="edit-ads mt-5">
+    <h2>Редагувати ваші оголошення</h2>
+
+    {% if apartments or houses %}
+    <div class="ads-grid-container">
+        {% for ad in apartments %}
+        <div class="ad-tile">
+            <div class="ad-info">
+                <h4>{{ ad.title }}</h4>
+                <p>Ціна: {{ ad.price }} $</p>
+                <p>Площа: {{ ad.area }} м²</p>
+                <p>Кількість кімнат: {{ ad.rooms }}</p>
+                <p>Поверх: {{ ad.floor }}</p>
+                {% if ad.image %}
+                <img src="{{ ad.image.url }}" alt="{{ ad.title }}" class="ad-image">
+                {% else %}
+                <p>Зображення відсутнє</p>
+                {% endif %}
+            </div>
+            <div class="ad-edit">
+                <form method="post" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    <input type="hidden" name="ad_id" value="{{ ad.id }}">
+                    <input type="hidden" name="ad_model" value="Apartment"> <!-- Передаємо модель -->
+                    <input type="text" name="title" class="form-control" value="{{ ad.title }}" placeholder="Назва оголошення">
+                    <input type="number" name="price" class="form-control" value="{{ ad.price }}" placeholder="Ціна">
+                    <input type="number" name="area" class="form-control" value="{{ ad.area }}" placeholder="Площа (м²)">
+                    <input type="number" name="rooms" class="form-control" value="{{ ad.rooms }}" placeholder="Кількість кімнат">
+                    <input type="number" name="floor" class="form-control" value="{{ ad.floor }}" placeholder="Поверх">
+                    <input type="file" name="image" class="form-control">
+                    <button type="submit" class="btn btn-update">Оновити</button>
+                </form>
+                <form method="post" style="display:inline;" onsubmit="return confirmDelete();">
+                    {% csrf_token %}
+                    <input type="hidden" name="ad_id" value="{{ ad.id }}">
+                    <input type="hidden" name="ad_model" value="Apartment">
+                    <button type="submit" name="delete_ad" class="btn btn-danger">Видалити</button>
+                </form>
+            </div>
+        </div>
+        {% endfor %}
+
+        {% for ad in houses %}
+        <div class="ad-tile">
+            <div class="ad-info">
+                <h4>{{ ad.title }}</h4>
+                <p>Ціна: {{ ad.price }} $</p>
+                <p>Площа: {{ ad.area }} м²</p>
+                <p>Кількість кімнат: {{ ad.rooms }}</p>
+                <p>Гараж: {{ ad.garage }}</p>
+                {% if ad.image %}
+                <img src="{{ ad.image.url }}" alt="{{ ad.title }}" class="ad-image">
+                {% else %}
+                <p>Зображення відсутнє</p>
+                {% endif %}
+            </div>
+            <div class="ad-edit">
+                <form method="post" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    <input type="hidden" name="ad_id" value="{{ ad.id }}">
+                    <input type="hidden" name="ad_model" value="House"> <!-- Передаємо модель -->
+                    <input type="text" name="title" class="form-control" value="{{ ad.title }}" placeholder="Назва оголошення">
+                    <input type="number" name="price" class="form-control" value="{{ ad.price }}" placeholder="Ціна">
+                    <input type="number" name="area" class="form-control" value="{{ ad.area }}" placeholder="Площа (м²)">
+                    <input type="number" name="rooms" class="form-control" value="{{ ad.rooms }}" placeholder="Кількість кімнат">
+                    <input type="number" name="garage" class="form-control" value="{{ ad.garage }}" placeholder="Гараж">
+                    <input type="file" name="image" class="form-control">
+                    <button type="submit" class="btn btn-update">Оновити</button>
+                </form>
+                <form method="post" style="display:inline;" onsubmit="return confirmDelete();">
+                    {% csrf_token %}
+                    <input type="hidden" name="ad_id" value="{{ ad.id }}">
+                    <input type="hidden" name="ad_model" value="House">
+                    <button type="submit" name="delete_ad" class="btn btn-danger">Видалити</button>
+                </form>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+    {% else %}
+    <p>У вас немає створених оголошень.</p>
+    {% endif %}
+</div>
+
+<script>
+    function confirmDelete() {
+        return confirm("Ви точно хочете видалити це оголошення?");
+    }
+</script>
+
+{% endblock %}

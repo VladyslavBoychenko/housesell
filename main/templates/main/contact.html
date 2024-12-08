@@ -1,0 +1,27 @@
+{% extends 'main/layout.html' %}
+
+{% block title %}Контакти{% endblock %}
+
+{% block content %}
+    <div class="aboutus">
+        <h2>Контакти</h2>
+        <p>Зв'язатися з нами можна кількома способами:</p>
+        <div class="tiles-container">
+            <div class="tile">
+                <h3><i class="fa-brands fa-telegram"></i></h3>
+                <p>Напишіть нам у Телеграм, і ми швидко відповімо на ваші запитання.</p>
+                <a href="https://t.me/Nemeberrion" target="_blank" class="contact-link">Написати в Телеграм</a>
+            </div>
+            <div class="tile">
+                <h3><i class="fa-solid fa-envelope"></i></h3>
+                <p>Ви також можете надіслати нам листа на електронну пошту, і ми з радістю допоможемо.</p>
+                <a href="mailto:housesell993@gmail.com" class="contact-link">Надіслати листа</a>
+            </div>
+            <div class="tile">
+                <h3><i class="fa-brands fa-github"></i></h3>
+                <p>Ми активно працюємо над новими проектами. Відвідайте наш профіль на GitHub, щоб дізнатися більше.</p>
+                <a href="https://github.com/VladyslavBoychenko" target="_blank" class="contact-link">Перейти на GitHub</a>
+            </div>
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,51 @@
+{% extends 'main/layout.html' %}
+
+{% load static %}
+
+
+{% block title %}Продати{% endblock %}
+
+{% block content %}
+    <div class="flat11">
+        <div class="image-flat11">
+            <div class="grid-container">
+                <div class="grid-item">
+                    <div class="filter">
+                        <img src="{{ apartment.image.url }}" alt="{{ apartment.title }}">
+                    </div>
+                </div>
+        </div>
+
+        <div class="text-flat11">
+            <h2>{{ apartment.title }}</h2>
+            <div class="price">Ціна: {{ apartment.price }} $</div>
+            <div class="filters">
+                <div class="filter">Поверх: {{ apartment.floor }}</div>
+                <div class="filter">Кімнат: {{ apartment.rooms }}</div>
+                <div class="filter">Площа: {{ apartment.area }} м²</div>
+            </div>
+
+            {% if owner %}
+            <div class="author">
+                <div class="author-photo">
+                    <img src="{{ owner.profile_picture.url }}" alt="Автор">
+                </div>
+                <div class="author-info">
+                    <p>
+                        <strong>{{ owner.username }}</strong>
+                    </p>
+                    <p>{{ owner.phone_number }}</p>
+                    <p><strong>Електронна пошта:</strong> {{ user.email }}</p>
+                </div>
+
+            </div>
+            {% endif %}
+
+
+            <div class="kingsad">
+                <p>{{ apartment.description }}</p>
+            </div>
+
+        </div>
+    </div>
+{% endblock %}
