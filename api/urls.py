@@ -3,7 +3,7 @@ from . import views
 
 urlpatterns = [
     path('', views.getData),
-    path('addhouse/', views.addHouse),
-    path('adduser/', views.addUser),
-    path('addapart/', views.addApartment),
+    path('api/addhouse/', views.addHouse),
+    path('api/adduser/', views.addUser),
+    path('api/addapart/', views.addApartment),
     ]
